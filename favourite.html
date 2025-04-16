@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <h1>Favouriten</h1>
+    <div id="favourites"></div>
+
+
+    <script>
+        //Hier wird der Javascript-Code eingefügt, um eine neue Seite nur mit den Favouriten-Karten zu erstellen
+        const favourites = JSON.parse(localstorage.getItem('likedCards')) || [];
+        const favouriteDiv = document.documentElementById('favourites');
+        console.log('Test', favouriteDiv);
+        favourites.forEach(card => {
+            const cardDiv = document.createElement('div');
+            cardDiv.className = 'card';
+            cardDiv.innerHTML = card; // Füge den Inhalt der Karte hinzu
+            favouriteDiv.appendchild(cardDiv);
+        });
+    </script>
+</body>
+
+</html>
