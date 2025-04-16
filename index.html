@@ -1,12 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
-    <script src="main.js"></script>
+  <nav class="flex justify-between bg-[#ff877f] items-center">
+    <!--Logo-->
+    <div class="m-4 flex items-center">
+      <a href="index.html" class="w-24"><img src="pokemon.jpg" alt="Logo" /></a>
+    </div>
+    <!--here the searchbar-->
+    <div>
+      <input type="text" id="searchInput" placeholder="Suchbegriff eingeben" class="m-2" />
+      <button onclick="searchCard()"><i class="fas fa-search"></i></button>
+    </div>
+    <!--Favorites-->
+    <div class="m-4">
+      <a href="journal.html" class="hover:bg-sky-200">Favorites</a>
+    </div>
+  </nav>
+  <!--Content Cards-->
+  <div id="content">
+    <div class="card" id="1">
+      <p>Dies ist der Text in der ersten Karte.</p>
+      <button onclick="markAsFavorite(2)"><i class="fas fa-search"></i></button>
+    </div>
+    <div class="card">
+      <p>
+        Hier ist der Text in der zweiten Karte, der durchsucht werden soll.
+      </p>
+    </div>
+    <div class="card">
+      <p>Dies ist ein Beispieltext für die Suche.</p>
+    </div>
+    <div class="card">
+      <p>Ein weiterer Text, der durchsucht werden kann.</p>
+    </div>
+  </div>
+
+  <script>
+    function searchCard() {
+      const input = document
+        .getElementById("searchInput")
+        .value.toLowerCase();
+      const contentDiv = document.getElementById("content");
+      const cards = contentDiv.querySelectorAll(".card"); // Alle Karten auswählen
+      let foundCards = [];
+
+      cards.forEach((card) => {
+        const originalText = card.innerText;
+        const words = originalText.split(" ");
+        const foundWords = words.filter((word) =>
+          word.toLowerCase().includes(input)
+        );
+
+        if (foundWords.length > 0) {
+          foundCards.push(card.innerHTML); // Füge den Inhalt der Karte hinzu
+        }
+      });
+
+      if (foundCards.length > 0) {
+        // Speichere die gefundenen Karten im localStorage
+        localStorage.setItem("foundCards", JSON.stringify(foundCards));
+        // Öffne das neue Dokument
+        window.open("results.html", "_blank");
+      } else {
+        alert("Keine Karten mit Suchbegriffen gefunden.");
+      }
+    };
+
+    //Hier Fouvoriten Karten im localstorage abgreifen
+    function markAsFavorite(cardId) {
+      // 1. LocalStorage abrufen und aktualisieren
+      let likedCards = JSON.parse(localStorage.getItem("likedCards")) || []; // Leeres Array, wenn nichts gespeichert ist
+      // 2. Überprüfen, ob die Karte bereits als Favorit markiert ist
+
+      if (!likedCards.includes(cardId)) {
+        // 3. Karte zur Favoritenliste hinzufügen
+        likedCards.push(cardId); // Füge die cardId zur Liste hinzu
+        localStorage.setItem('likedCards', JSON.stringify(likedCards)); // Speichern der aktualisierten Liste
+        console.log(likedCards, 'Test');
+        window.open("favourite.html", "_blank");
+        // alert("Karte als Favorit markiert!"); // Oder eine andere Bestätigung
+      } else {
+        alert("Karte ist bereits ein Favorit.");
+      }
+    };
+
+  </script>
 </body>
+
 </html>
