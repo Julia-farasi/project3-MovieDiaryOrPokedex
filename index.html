@@ -49,8 +49,8 @@
       const input = document
         .getElementById("searchInput")
         .value.toLowerCase();
-      const contentDiv = document.getElementById("content");
-      const cards = contentDiv.querySelectorAll(".card"); // Alle Karten auswählen
+      const contentDiv = document.getElementById("Pokes-Karten");
+      const cards = contentDiv.querySelectorAll(".pokemon-card"); // Alle Karten auswählen
       let foundCards = [];
 
       cards.forEach((card) => {
@@ -94,15 +94,16 @@
     };
 
   </script>
-<body class="bg-[#e0dfdf]">
+
+  <body class="bg-[#e0dfdf]">
 
     <!--Pokemons Container-->
     <section id="Pokes-Karten" class="grid grid-cols-5 gap-4 p-4">
-       
+
     </section>
-  
+
 
     <script src="main.js"></script>
-</body>
+  </body>
 
 </html>
