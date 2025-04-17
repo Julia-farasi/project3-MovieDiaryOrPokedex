@@ -15,30 +15,28 @@
             <a href="index.html" class="w-24"><img src="pokemon.jpg" alt="Logo" /></a>
         </div>
     </nav>
-    <h1 class="font-bold">Suchergebnisse</h1>
+    <h1 class="font-bold text-center p-2 text-xl text-[#ff877f]">Suchergebnisse</h1>
     <div id="results" class="grid grid-cols-5 gap-4 p-4 "></div>
     <!-- Bereich für die angezeigten Karten -->
 
 
     <script>
-        // Hier wird der JavaScript-Code eingefügt, um die Karten anzuzeigen
-        const results = JSON.parse(localStorage.getItem('foundCards')) || [];
-        const resultsDiv = document.getElementById('results');
+       // Hier wird der JavaScript-Code eingefügt, um die Karten anzuzeigen
+   const results = JSON.parse(localStorage.getItem('foundCards')) || [];
+   const resultsDiv = document.getElementById('results');
 
-        results.forEach(card => {
-            const cardDiv = document.createElement('div');
-            cardDiv.className = 'card';
-            cardDiv.innerHTML = card; // Füge den Inhalt der Karte hinzu
-            cardDiv.classList.add(
-                'bg-[#f0f0f0]',
-                'rounded-[5px]',
-                'shadow-[0px_1px_3px_#8d8181]'
-            );
-            resultsDiv.appendChild(cardDiv);
-        });
-
-
-    </script>
+   results.forEach(card => {
+       const cardDiv = document.createElement('div');
+       cardDiv.className = 'card';
+       cardDiv.innerHTML = card; // Füge den Inhalt der Karte hinzu
+       cardDiv.classList.add(
+           'bg-[#f0f0f0]',
+           'rounded-[5px]',
+           'shadow-[0px_1px_3px_#8d8181]'
+       );
+       resultsDiv.appendChild(cardDiv);
+   });
+ </script>
 </body>
 
 </html>

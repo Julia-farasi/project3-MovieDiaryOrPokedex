@@ -90,10 +90,17 @@ const ShowPokes = (Pokemons) => {
     button.textContent = "★";
     button.className =
       "text-[30px] mt-2 px-3 py-1 text-[#b8b4b4] hover:text-yellow-300 active:text-yellow-500 rounded";
-    // Pokes in Favoriten hinzufügen
+
+    // Pokes speichern und in Favoriten hinzufügen
     button.addEventListener("click", () => {
-      addEventListener(pokemon);
+      const likedCards = JSON.parse(localStorage.getItem("likedCards")) || [];
+      if (!likedCards.includes(pokemon.name)) {
+        likedCards.push(pokemon.name);
+        localStorage.setItem("likedCards", JSON.stringify(likedCards));
+      }
+      window.location.href = "favourite.html"; // Gehe zur Favoritenseite
     });
+    
 
     // Pokémon Typen
     const PokeListe = document.createElement("ul");
