@@ -8,19 +8,22 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <nav class="flex justify-between bg-[#ff877f] items-center">
+<header>
+    <header class="fixed w-full shadow-[0px_4px_15px_rgba(0,0,0,0.2)] z-10"></header>
+    <nav class="flex justify-between bg-[#ff877f] items-center pr-2 pl-2">
         <!--Logo-->
         <div class="m-4 flex items-center">
             <a href="index.html" class="w-24"><img src="pokemon.jpg" alt="Logo" /></a>
         </div>
+        <div> <a href="index.html" class="font-bold bg-[#d9d9d9] text-[#ff877f] p-2 rounded hover:text-black ">← Zurück zur Startseite</a></div>
     </nav>
     <h1 class="font-bold text-center p-2 text-xl text-[#ff877f]">Suchergebnisse</h1>
     <div id="results" class="grid grid-cols-5 gap-4 p-4 "></div>
     <!-- Bereich für die angezeigten Karten -->
 
-
+</header>
     <script>
+        
        // Hier wird der JavaScript-Code eingefügt, um die Karten anzuzeigen
    const results = JSON.parse(localStorage.getItem('foundCards')) || [];
    const resultsDiv = document.getElementById('results');

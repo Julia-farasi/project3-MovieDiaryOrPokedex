@@ -9,8 +9,11 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-[#e0dfdf]">
+<body class="bg-[#e0dfdf] ">
+<header class="fixed w-full shadow-[0px_4px_15px_rgba(0,0,0,0.2)] z-10">
+  
   <nav class="flex justify-between bg-[#ff877f] items-center pr-2 pl-2">
+   
     <!--Logo-->
     <div class="m-4 flex items-center">
       <a href="index.html" class="w-24"><img src="pokemon.jpg" alt="Logo" /></a>
@@ -20,20 +23,26 @@
       <input type="text" id="searchInput" placeholder="Suchbegriff eingeben" class="m-1 p-1 rounded" />
       <button onclick="searchCard()"><i class="fas fa-search text-[#ff877f]"></i></button>
     </div>
+
+    <!----Finde your Pokemon-->
+  
     <!--Favorites-->
     <div class="m-4">
+      
       <a href="favourite.html" target="_blank" class="text-xl font-bold text-[white] hover:text-yellow-300 active:text-yellow-500">Favorites</a>
     </div>
   </nav>
-
+</header>
   
 
   <script src="search.js"></script>
 
-  
+  <div class="pt-20 flex justify-center">
+    <img src="logo_en.png" alt="Finde your Pokemon" class="w-64" />
+  </div>
 
     <!--Pokemons Container-->
-    <section id="Pokes-Karten" class="grid grid-cols-5 gap-4 p-4">
+    <section id="Pokes-Karten" class="grid grid-cols-5 gap-4 p-4 ">
 
     </section>
 

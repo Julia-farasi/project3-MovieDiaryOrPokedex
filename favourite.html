@@ -10,14 +10,17 @@
 </head>
 
 <body>
-    <nav class="flex justify-between bg-[#ff877f] items-center">
+   <header class="fixed w-full shadow-[0px_4px_15px_rgba(0,0,0,0.2)] z-10">
+    <nav class="flex justify-between bg-[#ff877f] items-center pr-2 pl-2">
         <!--Logo-->
         <div class="m-4 flex items-center">
             <a href="index.html" class="w-24"><img src="pokemon.jpg" alt="Logo" /></a>
         </div>
+        <div> <a href="index.html" class="font-bold bg-[#d9d9d9] text-[#ff877f] p-2 rounded hover:text-black ">← Zurück zur Startseite</a></div>
     </nav>
-    <h1 class="font-bold text-center p-2 text-xl text-[#ff877f]">Favouriten</h1>
-    <div id="favourites" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 p-4"></div>
+</header>
+    <h1 class="font-bold text-center p-2 text-xl text-[#ff877f] pt-20">Favouriten</h1>
+    <div id="favourites" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 p-4 "></div>
 
 
     <script src="favourite.js"></script>
