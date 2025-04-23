@@ -1,0 +1,24 @@
+{
+  "name": "project3-moviediaryorpokedex",
+  "version": "1.0.0",
+  "source": "index.html",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Julia-farasi/project3-refactor_diary_pokedexOrMovie.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Julia-farasi/project3-refactor_diary_pokedexOrMovie/issues"
+  },
+  "homepage": "https://github.com/Julia-farasi/project3-refactor_diary_pokedexOrMovie#readme",
+  "description": "",
+  "devDependencies": {
+    "parcel": "^2.14.4"
+  }
+}
