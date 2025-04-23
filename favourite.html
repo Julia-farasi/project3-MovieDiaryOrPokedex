@@ -16,21 +16,28 @@
         </div>
     </nav>
     <h1>Favouriten</h1>
-    <div id="favourites"></div>
+    <div id="favourites" class="grid grid-cols-5 gap-4 p-4 "></div>
 
 
     <script>
         //Hier wird der Javascript-Code eingefügt, um eine neue Seite nur mit den Favouriten-Karten zu erstellen
-        const favourites = JSON.parse(localstorage.getItem('likedCards')) || [];
-        const favouriteDiv = document.documentElementById('favourites');
-        console.log('Test', favouriteDiv);
+        const favourites = JSON.parse(localstorage.getItem("likedCards")) || [];
+        const favouritesDiv = document.getElementById('favourites');
+        console.log('TestHier', favouriteDiv);
+
         favourites.forEach(card => {
             const cardDiv = document.createElement('div');
             cardDiv.className = 'card';
             cardDiv.innerHTML = card; // Füge den Inhalt der Karte hinzu
-            favouriteDiv.appendchild(cardDiv);
+            cardDiv.classList.add(
+                'bg-[#f0f0f0]',
+                'rounded-[5px]',
+                'shadow-[0px_1px_3px_#8d8181]'
+            );
+            favouritesDiv.appendchild(cardDiv);
         });
     </script>
 </body>
+<!-- <script src="main.js"></script> -->
 
 </html>

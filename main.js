@@ -85,11 +85,11 @@ const ShowPokes = (Pokemons) => {
       "mb-4"
     );
 
-    // Favoriten-Button
+    // Favoriten - Button;
     const button = document.createElement("button");
     button.textContent = "★";
     button.className =
-      "text-[30px] mt-2 px-3 py-1 text-[#b8b4b4] hover:text-yellow-300 active:text-yellow-500 rounded";
+      "favorite-button text-[30px] mt-2 px-3 py-1 text-[#b8b4b4] hover:text-yellow-300 active:text-yellow-500 rounded";
     // Pokes in Favoriten hinzufügen
     button.addEventListener("click", () => {
       addEventListener(pokemon);

@@ -24,7 +24,7 @@
         // Hier wird der JavaScript-Code eingefügt, um die Karten anzuzeigen
         const results = JSON.parse(localStorage.getItem('foundCards')) || [];
         const resultsDiv = document.getElementById('results');
-
+        console.log('ich bin hier bei search test');
         results.forEach(card => {
             const cardDiv = document.createElement('div');
             cardDiv.className = 'card';
